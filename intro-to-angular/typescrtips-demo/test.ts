@@ -40,8 +40,7 @@ user2List.forEach(({ firstName, id }) => {
 
 class Human {
    speak(){
-    console.log("hello!");
-    
+    console.log("hello!"); 
    }
 }
 
@@ -50,7 +49,7 @@ class Person extends Human{
     private name: string;
     age: number;
     constructor(name: string, age: number){
-        super();
+        super(); 
         this.name = name;
         this.age = age;
     }
@@ -76,3 +75,10 @@ Pending,
 }
 
 PaymentStatus.Faild;
+
+
+function test(name:string, users: UserInterface[]) {
+    users.forEach(u=>{
+        u.name = name
+    })
+}
