@@ -68,3 +68,11 @@ function getIdentity<T>(id: T) {
 
 getIdentity<string>("123");
 getIdentity<number>(123);
+
+enum PaymentStatus {
+Faild,
+Successful,
+Pending,
+}
+
+PaymentStatus.Faild;
