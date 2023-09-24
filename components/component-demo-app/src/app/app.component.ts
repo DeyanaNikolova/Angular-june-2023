@@ -14,4 +14,8 @@ export class AppComponent {
     {name: 'Maria', age: 25},
     {name: 'Anna', age: 22}
   ];
+
+  outputChildHandler(){
+    console.log('outputChildHandler');
+  }
 }

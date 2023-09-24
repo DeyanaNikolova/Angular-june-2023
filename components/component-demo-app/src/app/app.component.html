@@ -1,6 +1,4 @@
-<app-navigation [title]="title" [activeUsers]="users"/>
-<!-- <div>
-  <h1>{{ title }}</h1>
-</div> -->
-<hr />
+<app-navigation [title]="title" [activeUsers]="users"
+(onChildOutput)="outputChildHandler()"
+/>
 <app-home />
