@@ -14,8 +14,6 @@ export class NavigationComponent {
   isActive = false;
   inputValue = 'Hello';
 
-
-
   handleClick(): void {
    this.isActive = !this.isActive; 
   }
