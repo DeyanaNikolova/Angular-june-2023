@@ -5,14 +5,14 @@
     <span *ngIf="isActive">
         <ul>
             <li *ngFor="let user of activeUsers">
-                <span [class.green]="user.age % 2 === 0">
+                <span [class.green]="user.age % 2 === 0" [class.red]="user.age % 2 !== 0">
                     {{ user.name + ': ' + user.age }}
                 </span>
             </li>
         </ul>
     </span>
     <span *ngIf="!isActive">
-        <div>Nothing is Active</div>
+        <div>Nothing is Active :(</div>
     </span>
 
     <input [value]="inputValue" type="text" />
