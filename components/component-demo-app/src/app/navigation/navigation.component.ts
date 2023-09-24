@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-navigation',
@@ -7,13 +7,17 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent {
-  title = 'hide';
-  toggle = false;
 
+  isActive = false;
 
-  handleClick(){
-   this.toggle = !this.toggle;
-   console.log(this.toggle);
-    
+activeUsers = [
+  {name: 'Mitko', age: 21}, 
+  {name: 'Pesho', age: 30}, 
+  {name: 'Maria', age: 25},
+  {name: 'Anna', age: 22}
+];
+
+  handleClick(): void {
+   this.isActive = !this.isActive; 
   }
 }
