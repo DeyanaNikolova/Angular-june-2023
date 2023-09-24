@@ -7,8 +7,13 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent {
-  title = 'navigation title';
+  title = 'hide';
+  toggle = false;
+
+
   handleClick(){
-    console.log('clicked!'); 
+   this.toggle = !this.toggle;
+   console.log(this.toggle);
+    
   }
 }

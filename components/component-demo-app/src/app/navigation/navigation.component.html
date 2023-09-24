@@ -1,4 +1,5 @@
 <div id="nav">
-    <span>{{ title }}</span>
+    <span *ngIf="toggle"> HIDE </span>
+    <span *ngIf="!toggle"> SHOW </span>
     <button (click)="handleClick()">Click me!</button>
 </div>
