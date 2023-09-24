@@ -8,3 +8,11 @@
     align-items: center;
     flex-direction: row;
 }
+
+.green{
+    color: green;
+}
+
+.red{
+    color:red;
+}
