@@ -10,5 +10,7 @@
     <span *ngIf="!isActive">
         <div>Nothing is Active</div>
     </span>
+
+    <input [value]="inputValue" type="text" />
     <button (click)="handleClick()">Make {{ isActive ? "Inactive" : "Active"}}</button>
 </div>
