@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from './type/User';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Dependency Injection, RXJS and Services';
 
-  users = [
+  users: User[] = [
     {name: 'Ivan', age: 21},
     {name: 'Mitko', age: 25},
     {name: 'Pesho', age: 24},
