@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Dependency Injection, RXJS and Services';
+
+  users = [
+    {name: 'Ivan', age: 21},
+    {name: 'Mitko', age: 25},
+    {name: 'Pesho', age: 24},
+    {name: 'Maria', age: 12},
+  ];
 }
