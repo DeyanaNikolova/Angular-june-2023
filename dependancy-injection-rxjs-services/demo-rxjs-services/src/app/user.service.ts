@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from './types/User';
+import { User } from './types/JsonPlaceholderUser';
 
 // @Injectable({
 //   providedIn: 'root'
@@ -21,16 +21,16 @@ export class UserService {
     // }, 3000);
   }
 
-  addUser(inputName: HTMLInputElement, inputAge: HTMLInputElement){
-    const user = {
-      name: inputName.value,
-      age: Number(inputAge.value)
-    };
+  addUser(inputName: HTMLInputElement, inputEmail: HTMLInputElement){
+    // const user = {
+    //   name: inputName.value,
+    //   age: Number(inputAge.value)
+    // };
   
-    this.users = [...this.users, user];
+    // this.users = [...this.users, user];
     
     inputName.value = '';
-    inputAge.value = '';
+    inputEmail.value = '';
   }
 
   getUsers(){

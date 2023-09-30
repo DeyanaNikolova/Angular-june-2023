@@ -1,11 +1,11 @@
 
 <div>
-  <h1>{{ title }} works!</h1>
+  <h1>{{ title }}</h1>
 </div>
 <div>
   <input #inputName type="text" placeholder="name"/>
-  <input #inputAge type="text" placeholder="age"/>
-  <button (click)="setUser(inputName ,inputAge)">Add user</button>
+  <input #inputEmail type="email" placeholder="email"/>
+  <button (click)="setUser(inputName ,inputEmail)">Add user</button>
 </div>
 
 <div *ngIf="isLoading">

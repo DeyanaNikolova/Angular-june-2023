@@ -1,5 +1,5 @@
 import { Component, Input, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
-import { User } from '../types/User';
+import { User } from '../types/JsonPlaceholderUser';
 
 
 @Component({
