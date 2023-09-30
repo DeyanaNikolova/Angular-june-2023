@@ -34,12 +34,14 @@ setUser(inputName: HTMLInputElement, inputAge: HTMLInputElement): void {
 
 //      const timer = setInterval(()=>{
 //    observer.next(counter++);
+//    observer.complete();
 //     }, intervalValue);
   
   
 //     // this code is invoked on destroy
 //     return ()=>{
 //       clearInterval(timer);
+//       observer.unsubscribe();
 //     };
 //   });
 // }
@@ -49,14 +51,20 @@ setUser(inputName: HTMLInputElement, inputAge: HTMLInputElement): void {
 // console.log('data from observer: ', data);
 // });
 
-const stream$ = interval(3000).pipe(map((x) => x * 2));
+const stream$ = interval(3000)
+.pipe(map((x) => x * 2))  // transform, filter, accumulate, map,
+.subscribe({
+  next: x => console.log('data', x),
+  error: (err)=> console.error(`Error occured: ${err}!`),
+  complete: ()=> console.log('stream has been completed!'),
+});
 
 
 
-setTimeout(() => {
-  stream$.subscribe({
-    next: x => console.log('data', x),
-    error: (err)=> console.error(`Error occured: ${err}!`),
-    complete: ()=> console.log('stream has been completed!'),
-  });
-}, 3000);
+// setTimeout(() => {
+//   stream$.subscribe({
+//     next: x => console.log('data', x),
+//     error: (err)=> console.error(`Error occured: ${err}!`),
+//     complete: ()=> console.log('stream has been completed!'),
+//   });
+// }, 3000);
