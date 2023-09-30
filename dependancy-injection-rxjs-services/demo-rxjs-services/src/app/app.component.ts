@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from './user.service';
 import { User } from '././types/JsonPlaceholderUser'
-import { Observable, map, interval } from 'rxjs';
+
 
 
 @Component({
@@ -36,7 +36,7 @@ ngOnInit(): void {
   this.userService.getUsers().subscribe(users => {
     this.appUsers = users;
     this.isLoading = false;
-  })
+  });
 }
 
 }
