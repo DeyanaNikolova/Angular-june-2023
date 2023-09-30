@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { User } from './types/User';
-@Injectable({
-  providedIn: 'root'
-})
+
+// @Injectable({
+//   providedIn: 'root'
+// })
+
 export class UserService {
 
   users: User[] = [

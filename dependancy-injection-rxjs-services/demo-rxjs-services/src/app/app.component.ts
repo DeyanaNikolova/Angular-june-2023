@@ -9,14 +9,16 @@ import { User } from './types/User';
 })
 export class AppComponent {
   title = 'Dependency Injection, RXJS and Services';
+
   appUsers: User[] = [];
 
 constructor(public userService: UserService){
   this.appUsers = this.userService.users;
 }
 
-setUser(inputName: HTMLInputElement, inputAge: HTMLInputElement){
+setUser(inputName: HTMLInputElement, inputAge: HTMLInputElement): void {
   this.userService.addUser(inputName, inputAge);
+  this.appUsers = this.userService.users;
 }
 }
  
