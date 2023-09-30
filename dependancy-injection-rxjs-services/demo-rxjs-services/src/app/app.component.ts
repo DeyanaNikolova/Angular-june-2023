@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from './user.service';
 import { User } from './types/User';
-import { Observable, map } from 'rxjs';
+import { Observable, map, interval } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -25,24 +25,24 @@ setUser(inputName: HTMLInputElement, inputAge: HTMLInputElement): void {
 }
  
 
-function interval(intervalValue: number) {
-  return new Observable<number>(observer => {
-    // observer.next(1000);
-    // observer.next(2000);
-    // observer.next(3000);
-   let counter = 0;
+// function interval(intervalValue: number) {
+//   return new Observable<number>(observer => {
+//     // observer.next(1000);
+//     // observer.next(2000);
+//     // observer.next(3000);
+//    let counter = 0;
 
-     const timer = setInterval(()=>{
-   observer.next(counter++);
-    }, intervalValue);
+//      const timer = setInterval(()=>{
+//    observer.next(counter++);
+//     }, intervalValue);
   
   
-    // this code is invoked on destroy
-    return ()=>{
-      clearInterval(timer);
-    };
-  });
-}
+//     // this code is invoked on destroy
+//     return ()=>{
+//       clearInterval(timer);
+//     };
+//   });
+// }
 
 
 // const stream$ = interval(4000).subscribe(data =>{
