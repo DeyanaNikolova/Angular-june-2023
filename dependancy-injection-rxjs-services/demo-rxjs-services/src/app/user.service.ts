@@ -15,15 +15,15 @@ export class UserService {
   ];
 
   constructor(){
-    setInterval(() => {
-      this.users.push({
-        name: 'DemoName',
-        age: 0,
-      });
+    // setInterval(() => {
+    //   this.users.push({
+    //     name: 'DemoName',
+    //     age: 0,
+    //   });
 
-      console.log('User has been added!');
+    //   console.log('User has been added!');
       
-    }, 3000);
+    // }, 3000);
   }
 
   addUser(inputName: HTMLInputElement, inputAge: HTMLInputElement){
