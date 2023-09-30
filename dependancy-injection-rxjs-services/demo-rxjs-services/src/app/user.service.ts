@@ -7,12 +7,7 @@ import { User } from './types/User';
 
 export class UserService {
 
-  users: User[] = [
-    {name: 'Ivan', age: 21},
-    {name: 'Mitko', age: 25},
-    {name: 'Pesho', age: 24},
-    {name: 'Maria', age: 12},
-  ];
+  users: User[] = [];
 
   constructor(){
     // const interval = setInterval(() => {
@@ -36,5 +31,10 @@ export class UserService {
     
     inputName.value = '';
     inputAge.value = '';
+  }
+
+  getUsers(){
+    return fetch('http://jsonplaceholder.typicode.com/users')
+    .then(res => res.json());
   }
 }
