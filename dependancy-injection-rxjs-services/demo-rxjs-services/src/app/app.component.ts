@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from './user.service';
-import { User } from './types/JsonPlaceholderUser';
+import { User } from '././types/JsonPlaceholderUser'
 import { Observable, map, interval } from 'rxjs';
+
 
 @Component({
   selector: 'app-root',
@@ -24,11 +25,18 @@ setUser(inputName: HTMLInputElement, inputAge: HTMLInputElement): void {
 }
 
 ngOnInit(): void {
-  this.userService.getUsers()
-  .then(users => {
+  // Promise
+  // this.userService.getUsers()
+  // .then(users => {
+  //   this.appUsers = users;
+  //   this.isLoading = false;
+  // });
+
+  // Observable
+  this.userService.getUsers().subscribe(users => {
     this.appUsers = users;
     this.isLoading = false;
-  });
+  })
 }
 
 }

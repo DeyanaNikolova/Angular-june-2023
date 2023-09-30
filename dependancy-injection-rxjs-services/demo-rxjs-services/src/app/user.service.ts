@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
 import { User } from './types/JsonPlaceholderUser';
+import { HttpClient } from '@angular/common/http';
 
-// @Injectable({
-//   providedIn: 'root'
-// })
+@Injectable({
+  providedIn: 'root'
+})
 
 export class UserService {
 
   users: User[] = [];
 
-  constructor(){
+  constructor(private http: HttpClient){
     // const interval = setInterval(() => {
     //   this.users.push({
     //     name: 'DemoName',
@@ -34,7 +35,13 @@ export class UserService {
   }
 
   getUsers(){
-    return fetch('http://jsonplaceholder.typicode.com/users')
-    .then(res => res.json());
+    // Promise
+    // return fetch('http://jsonplaceholder.typicode.com/users')
+    // .then(res => res.json());
+
+    // Observable
+   return this.http.get<User[]>('http://jsonplaceholder.typicode.com/users');
   }
+
+
 }
