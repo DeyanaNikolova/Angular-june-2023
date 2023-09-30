@@ -15,7 +15,7 @@ export class UserService {
   ];
 
   constructor(){
-    // setInterval(() => {
+    // const interval = setInterval(() => {
     //   this.users.push({
     //     name: 'DemoName',
     //     age: 0,
@@ -37,6 +37,4 @@ export class UserService {
     inputName.value = '';
     inputAge.value = '';
   }
-
-
 }
