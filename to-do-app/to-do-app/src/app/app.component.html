@@ -1,6 +1,6 @@
 <div class="todo">
-    <app-header (onHeaderOutput)="onAddClickHandler()"/>
-
-    <app-todo-list  />
+    <app-header (onHeaderOutput)="onAddClickHandler(todos)"/>
+   
+    <app-todo-list [todos]="todos"/>
 </div>
 <app-popup />

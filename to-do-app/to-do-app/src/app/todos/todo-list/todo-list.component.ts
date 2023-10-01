@@ -7,8 +7,8 @@ import { Todo } from '../../types/Todo';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent {
-  @Input()
-  title:{title: string}[] = [];
 
-  todos: Todo[] = [];
+  @Input() todos: Todo[] = [];
+
+
 }
