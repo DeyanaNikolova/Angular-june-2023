@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter,  } from '@angular/core';
 import { Todo } from '../types/Todo';
 
 
@@ -8,15 +8,21 @@ import { Todo } from '../types/Todo';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  todos: Todo[] = []
+  @Output() onHeaderOutput = new EventEmitter<Todo[]>();
 
-  addTodo(inputTitle: HTMLInputElement){
+  todos: Todo[] = [];
+
+  addTodo(even: Event, inputTitle: HTMLInputElement): void{
     const todo = {
       title: inputTitle.value
     }
     
   this.todos = [...this.todos, todo];
-  console.log(this.todos);
   
+  console.log(this.todos, todo.title);
+
+  inputTitle.value = ''; 
+
+  this.onHeaderOutput.emit(this.todos);
   }
 }
