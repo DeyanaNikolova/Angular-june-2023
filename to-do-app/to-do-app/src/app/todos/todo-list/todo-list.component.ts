@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Todo } from '../../types/Todo';
 
 @Component({
   selector: 'app-todo-list',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent {
-
+  @Input('title')
+  todoTitle:{title: string}[] = [];
+  todos: Todo[] = [];
 }
