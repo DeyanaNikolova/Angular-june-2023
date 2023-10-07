@@ -6,5 +6,5 @@ import { Todo } from 'src/app/types/Todo';
   styleUrls: ['./tod-card.component.css']
 })
 export class TodCardComponent {
-  @Input() todo: Todo[] = [];
+  @Input() todo: Todo | undefined = undefined;
 }

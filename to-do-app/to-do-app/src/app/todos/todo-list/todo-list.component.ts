@@ -7,6 +7,7 @@ import { Todo } from '../../types/Todo';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
+
   todos: Todo[] = [];
   inputTitle: string ='';
 
@@ -22,14 +23,14 @@ export class TodoListComponent implements OnInit {
   }
 
   
-  addTodo(inputTitle: HTMLInputElement): void{
+  addTodo(): void{
     const todo = {
-      title: inputTitle.value
+      title: this.inputTitle
     }
     
   this.todos = [...this.todos, todo];
   
-  inputTitle.value = ''; 
+  this.inputTitle = ''; 
   
   }
 }

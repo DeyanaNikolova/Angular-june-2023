@@ -1,16 +1,24 @@
 <div class="header">
   <h1>ToDo List</h1>
-  <input type="text" #inputTitle class="todo-input" placeholder="Write your todo list here...">
-  <button (click)="addTodo(inputTitle)" class="btn-add">Add</button>
-  </div>
+  <form (submit)="addTodo()">
+    <input type="text"
+    name="inputTitle" 
+    class="todo-input" 
+    placeholder="Enter your todo here..."
+    [(ngModel)]="inputTitle" 
+    />
+    <input type="submit" class="btn-add" value="Add Todo"/>
+  </form>
+</div>
+ 
 
 <div class="todolist">
 <h3>List of Works Todo:</h3>
 <p class="error-info"></p>
-<ul>
-  <li *ngFor="let item of todos" id="test">
-   <app-tod-card/>
-  </li>  
+<ul >
+  <li *ngFor="let todo of todos">
+    <app-tod-card [todo]="todo" />   
+  </li> 
 </ul>
 </div>
  
