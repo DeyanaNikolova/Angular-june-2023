@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Todo } from '../../types/Todo';
 
 @Component({
@@ -6,9 +6,30 @@ import { Todo } from '../../types/Todo';
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.css']
 })
-export class TodoListComponent {
+export class TodoListComponent implements OnInit {
+  todos: Todo[] = [];
+  inputTitle: string ='';
 
-  @Input() todos: Todo[] = [];
+  ngOnInit(): void {
+    this.todos = [
+      {
+        title: 'laundry'
+      },
+      {
+        title: 'washing dishes'
+      }
+    ];
+  }
 
-
+  
+  addTodo(inputTitle: HTMLInputElement): void{
+    const todo = {
+      title: inputTitle.value
+    }
+    
+  this.todos = [...this.todos, todo];
+  
+  inputTitle.value = ''; 
+  
+  }
 }
