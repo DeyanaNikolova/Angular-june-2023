@@ -1,4 +1,5 @@
 <div class="todo">
-    <app-todo-list/>
+    <app-header (newTodo)="addNewTodo($event)"/>
+    <app-todo-list [todos]="todos"/>
 </div>
 <app-popup />

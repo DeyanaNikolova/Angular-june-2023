@@ -1,0 +1,12 @@
+<div class="header">
+    <h1>ToDo List</h1>
+    <form (submit)="addTodo(inputTitle)">
+      <input type="text"
+      name="inputTitle" 
+      class="todo-input" 
+      placeholder="Enter your todo here..."
+     #inputTitle
+      />
+      <input type="submit" class="btn-add" value="Add Todo"/>
+    </form>
+  </div>
