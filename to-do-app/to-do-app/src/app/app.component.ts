@@ -10,20 +10,29 @@ export class AppComponent implements OnInit {
 
   todos: Todo[]= [];
 
+
+
   ngOnInit(): void {
     this.todos = [
       {
-        title: 'laundry'
+        title: 'laundry',
+        id: this.getRandomId()
       },
       {
-        title: 'washing dishes'
+        title: 'washing dishes',
+        id: this.getRandomId()
       }
     ];
+    console.log(this.todos);
+    
   }
 
+  getRandomId() {
+    return Math.floor((Math.random()*6)+1);
+}
+
   addNewTodo(todo: Todo){
-this.todos.push(todo);
-console.log(this.todos);
+  this.todos.push(todo);
 
   }
 }

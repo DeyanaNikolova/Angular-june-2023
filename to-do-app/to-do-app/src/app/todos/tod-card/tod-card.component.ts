@@ -7,4 +7,11 @@ import { Todo } from 'src/app/types/Todo';
 })
 export class TodCardComponent {
   @Input() todo: Todo | undefined = undefined;
+
+ todos: Todo[] = []; 
+
+ deleteTodo(){
+  console.log('delete clicked');
+  
+ }
 }

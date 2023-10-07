@@ -13,7 +13,8 @@ export class HeaderComponent {
 
   addTodo(inputTitle: HTMLInputElement): void{
     const todo = {
-      title: inputTitle.value
+      title: inputTitle.value,
+      id: this.getRandomId()
     }
     
   this.todos = [...this.todos, todo];
@@ -24,4 +25,8 @@ export class HeaderComponent {
   inputTitle.value = ''; 
   
   }
+
+  getRandomId() {
+    return Math.floor((Math.random()*6)+1);
+}
 }

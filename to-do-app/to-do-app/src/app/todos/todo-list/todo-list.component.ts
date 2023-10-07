@@ -9,5 +9,4 @@ import { Todo } from '../../types/Todo';
 export class TodoListComponent {
 @Input()
   todos: Todo[] = []; 
-
 }
