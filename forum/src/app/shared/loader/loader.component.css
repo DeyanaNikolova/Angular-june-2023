@@ -6,6 +6,7 @@
 }
 .lds-hourglass:after {
   content: " ";
+  background-color: darkcyan;
   display: block;
   border-radius: 50%;
   width: 0;
