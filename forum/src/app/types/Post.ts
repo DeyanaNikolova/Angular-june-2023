@@ -1,4 +1,4 @@
-import { UserId } from "./Theme";
+import { UserId } from './User-id';
 
 export interface Post{
 likes: [];
