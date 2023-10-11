@@ -37,4 +37,7 @@ export class UserListComponent implements OnInit{
     });
   }
 
+  reloadUsers(): void{
+    this.loadUsers();
+  }
 }
