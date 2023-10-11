@@ -18,6 +18,10 @@ export class UserListComponent implements OnInit{
     ){}
 
   ngOnInit(): void {
+   this.loadUsers();
+  }
+
+  loadUsers(): void{
     this.globalLoaderService.showLoader();
 
 
