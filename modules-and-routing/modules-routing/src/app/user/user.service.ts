@@ -15,6 +15,6 @@ export class UserService implements OnInit {
   }
 
   fetchUsers(){
-   return this.http.get<User>('https://jsonplaceholder.typicode.com/users')
+   return this.http.get<User[]>('https://jsonplaceholder.typicode.com/users');
   }
 }
