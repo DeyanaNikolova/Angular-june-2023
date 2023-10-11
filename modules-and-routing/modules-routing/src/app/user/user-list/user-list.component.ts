@@ -20,9 +20,16 @@ export class UserListComponent implements OnInit{
   ngOnInit(): void {
     this.globalLoaderService.showLoader();
 
-    this.userService.fetchUsers().subscribe((users) =>{
+
+    this.userService.fetchUsers().subscribe({
+        next: (users) =>{
     this.userList = users;
     this.globalLoaderService.hideLoader();
+      },
+      error: (error)=>{
+        console.error(`Error: ${error}`);
+        this.globalLoaderService.hideLoader();
+      },
     });
   }
 
