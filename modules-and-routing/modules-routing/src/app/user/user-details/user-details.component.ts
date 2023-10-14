@@ -15,11 +15,11 @@ export class UserDetailsComponent implements OnInit {
     private userService: UserService,
     ) {
 
-  console.log('snapshot.data ', this.activatedRoute.snapshot.data);
+  console.log('snapshot.data ', this.activatedRoute.snapshot.data['user']);
 
   this.activatedRoute.params.subscribe((v)=> console.log('params.subscribe ', v));
   }
   ngOnInit(): void {
-   // this.userService.fetchSingleUser(3)
+   
   }
 }
