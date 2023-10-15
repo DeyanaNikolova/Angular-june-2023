@@ -19,6 +19,6 @@ export class UserAuthGuard implements CanActivate{
     }
 
     checkIfLoggedIn(url: string): boolean{
-        return false;
+        return true;
     }
 }

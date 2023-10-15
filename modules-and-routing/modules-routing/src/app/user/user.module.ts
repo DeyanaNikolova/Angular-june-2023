@@ -1,24 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserListComponent } from './user-list/user-list.component';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserResolver } from './user-details/user-details.resolver';
 import { UserAuthGuard } from './user-details/user-details.guard';
+
+const routes: Routes = [
+  { path: 'user/list', component: UserListComponent },
+  {
+    path: 'user/details/:id',
+    resolve: { user: UserResolver },
+    canActivate: [UserAuthGuard],
+    component: UserDetailsComponent,
+  },
+];
 
 @NgModule({
   declarations: [UserListComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild([
-      { path: 'user/list', component: UserListComponent },
-      {
-        path: 'user/details/:id',
-        resolve: { user: UserResolver },
-        canActivate: [UserAuthGuard],
-        component: UserDetailsComponent,
-      },
-    ]),
+    RouterModule.forChild(routes),
   ],
   exports: [UserListComponent],
 })
