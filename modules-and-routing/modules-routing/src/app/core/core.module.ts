@@ -4,13 +4,15 @@ import { GlobalLoaderComponent } from './global-loader/global-loader.component';
 import { SharedModule } from '../shared/shared.module';
 import { NavigationComponent } from './navigation/navigation.component';
 import { RouterModule } from '@angular/router';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 
 @NgModule({
   declarations: [
     GlobalLoaderComponent,
-    NavigationComponent
+    NavigationComponent,
+    NotFoundComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import { RouterModule } from '@angular/router';
   ],
   exports: [
     GlobalLoaderComponent,
-    NavigationComponent
+    NavigationComponent,
+    NotFoundComponent
   ]
 })
 export class CoreModule { }
