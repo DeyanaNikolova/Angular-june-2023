@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { UserService } from '../user.service';
+
 
 @Component({
   selector: 'app-user-details',
@@ -10,10 +10,7 @@ import { UserService } from '../user.service';
 export class UserDetailsComponent implements OnInit {
 
 
-  constructor(
-    private activatedRoute: ActivatedRoute,
-    private userService: UserService,
-    ) {
+  constructor(private activatedRoute: ActivatedRoute) {
 
   console.log('snapshot.data ', this.activatedRoute.snapshot.data['user']);
 
