@@ -29,6 +29,8 @@
 
 .theme-title {
     padding: 0;
+    width: 95%;
+    margin: 0 auto;
 }
 
 .theme-name {
@@ -65,4 +67,13 @@
 
 time {
     font-weight: bold;
+}
+
+
+/* welcome-comp */
+
+.welcome-comp{
+width: 80%;
+margin: 0 auto;
+padding: 15px 5px 40px;
 }
