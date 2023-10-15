@@ -4,6 +4,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { RouterModule } from '@angular/router';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserResolver } from './user-details/user-details.resolver';
+import { UserAuthGuard } from './user-details/user-details.guard';
 
 @NgModule({
   declarations: [UserListComponent],
@@ -14,6 +15,7 @@ import { UserResolver } from './user-details/user-details.resolver';
       {
         path: 'user/details/:id',
         resolve: { user: UserResolver },
+        canActivate: [UserAuthGuard],
         component: UserDetailsComponent,
       },
     ]),

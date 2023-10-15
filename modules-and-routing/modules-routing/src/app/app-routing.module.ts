@@ -6,7 +6,7 @@ import { NotFoundComponent } from './core/not-found/not-found.component';
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'user/list'},
   {path: 'todo-list', component: TodoListComponent},
-  {path: '**', component: NotFoundComponent}
+//  {path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({
