@@ -29,7 +29,7 @@ export class UserService {
       // password: ''
     };
 
-    localStorage.setItem(this.USER_KEY, JSON.stringify(this.user))
+    localStorage.setItem(this.USER_KEY, JSON.stringify(this.user));
   }
 
   logout(): void {
