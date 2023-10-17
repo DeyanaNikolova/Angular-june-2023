@@ -25,12 +25,12 @@ import { WelcomeComponent } from './welcome/welcome.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
     CoreModule,
     SharedModule,
     UserModule,
-    ThemeModule
+    ThemeModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
