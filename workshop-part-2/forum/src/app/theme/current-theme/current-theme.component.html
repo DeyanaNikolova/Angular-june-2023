@@ -1,5 +1,4 @@
 <div class="theme-content" *ngIf="theme">
-
   <div class="theme-title">
     <div class="theme-name-wrapper">
       <div class="theme-name">
@@ -12,8 +11,10 @@
         <p>
           Subscribers: <span>{{ theme.subscribers.length }}</span>
         </p>
-        <!-- <button class="subscribe">Subscribe</button>
-                <button class="unsubscribe">Unsubscribe</button> -->
+        <div *ngIf="isLoggedIn">
+          <button class="subscribe">Subscribe</button>
+          <button class="unsubscribe">Unsubscribe</button>
+        </div>
       </div>
     </div>
   </div>
@@ -33,9 +34,9 @@
         <p>{{ post.text }}</p>
       </div>
     </div>
-    <div class="footer">
-      <!-- <i class="fas fa-thumbs-up"></i>
-            <i class="fas fa-thumbs-down"></i> -->
+    <div class="footer" *ngIf="isLoggedIn">
+      <i class="fas fa-thumbs-up"></i>
+      <i class="fas fa-thumbs-down"></i>
       <p>
         <span>{{ post.likes.length }}</span> likes
       </p>
