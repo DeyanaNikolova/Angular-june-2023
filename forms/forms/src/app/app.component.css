@@ -1,5 +1,6 @@
 .highlight{
-    color: orangered;
-    background-color: yellowgreen;
-    font-size: 36px;
+    color: rgb(154, 65, 35);
+    background-color: rgb(227, 228, 209);
+    font-size: 40px;
+    cursor: pointer;
 }
