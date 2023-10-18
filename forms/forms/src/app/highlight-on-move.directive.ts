@@ -1,10 +1,15 @@
-import { Directive } from '@angular/core';
+import { Directive, ElementRef, OnInit, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[appHighlightOnMove]'
+  selector: '[appHighlightOnMove]',
 })
-export class HighlightOnMoveDirective {
+export class HighlightOnMoveDirective implements OnInit {
+  constructor(private elRef: ElementRef, private renderer: Renderer2) {}
 
-  constructor() { }
+  ngOnInit(): void {
+    console.log(this.elRef);
+    // this.elRef.nativeElement.style.backgroundColor = 'yellow';
 
+    this.renderer.setStyle(this.elRef.nativeElement, 'backgroundColor', 'red');
+  }
 }
