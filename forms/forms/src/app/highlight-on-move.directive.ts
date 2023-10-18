@@ -32,7 +32,7 @@ export class HighlightOnMoveDirective implements OnInit {
     
    // with css class
    this.renderer.addClass(this.elRef.nativeElement,
-      'highlight')
+      'highlight');
   }
 
   mouseLeaveHandler(e: MouseEvent): void {
@@ -40,6 +40,6 @@ export class HighlightOnMoveDirective implements OnInit {
   
   // with css class
    this.renderer.removeClass(this.elRef.nativeElement,
-    'highlight')
+    'highlight');
   }
 }
