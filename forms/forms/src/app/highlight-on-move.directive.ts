@@ -4,12 +4,17 @@ import {
   OnInit,
   Renderer2,
   OnDestroy,
+  HostListener,
 } from '@angular/core';
 
 @Directive({
   selector: '[appHighlightOnMove]',
 })
 export class HighlightOnMoveDirective implements OnInit, OnDestroy {
+  @HostListener('mouseover', ['$event']) mouseOverHandler(e: MouseEvent){
+console.log('mouseover', e);
+
+  }
   constructor(private elRef: ElementRef, private renderer: Renderer2) {}
 
   unsubscribeFromEvents: (() => void)[] = [];
