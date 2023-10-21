@@ -1,9 +1,17 @@
 <h1 appHighlightOnMove>Forms and Directives</h1>
 <hr />
+<nav>
 <div appMyRouterLink="/home">Link to Home</div>
-<br />
 <div appMyRouterLink="/login">Link to Login</div>
-<br />
 <div appMyRouterLink="/register">Link to Register</div>
+</nav>
+<hr />
+<!-- structural directives are always with * prefix -->
+<div *ngIf="true">Simple Div 1</div>
+
+<!-- the * prefix refers to ng-template -->
+<ng-template [ngIf]="true">
+    <div>Simple Div 1.1</div>
+</ng-template>
 <hr />
 <router-outlet />
