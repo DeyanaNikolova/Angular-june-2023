@@ -10,6 +10,7 @@ import {
 
 @Directive({
   selector: '[appMyStructural]',
+  exportAs: 'appMyStructural'
 })
 export class MyStructuralDirective implements OnChanges {
   @Input() appMyStructural: boolean = false;
