@@ -21,7 +21,8 @@ export class MyStructuralDirective implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if(this.appMyStructural){
       this.vcRef.createEmbeddedView(this.tempalateRef, {
-        value: 'value from ngOnChanges 123'
+        value: 'value from ngOnChanges 123',
+        $implicit: 'this is imlicit data',
       });
     }else{
 this.vcRef.clear();
