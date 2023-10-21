@@ -29,3 +29,10 @@
     <div>Structural Directives (Usage 2)</div>
     <h4>value: {{ value }} : {{ val }}</h4>
 </ng-template>
+
+<!-- Usage 3 -->
+<ng-template #tmp>
+    <div>Structural Directives (Usage 3)</div>
+</ng-template>
+
+<ng-container [appMyStructural]="isShown" [myTmpProp]="tmp"/>

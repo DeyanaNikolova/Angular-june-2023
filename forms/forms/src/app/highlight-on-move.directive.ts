@@ -12,8 +12,6 @@ import {
 })
 export class HighlightOnMoveDirective implements OnInit, OnDestroy {
   @HostListener('mouseover', ['$event']) mouseOverHandler(e: MouseEvent){
-console.log('mouseover', e);
-
   }
   constructor(private elRef: ElementRef, private renderer: Renderer2) {}
 
