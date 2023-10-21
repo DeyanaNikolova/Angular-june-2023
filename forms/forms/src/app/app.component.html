@@ -18,4 +18,13 @@
 
 <button (click)="toggle()">toggle my state</button>
 
-<div>Structural Directives (Usage 1)</div>
+
+<!-- Custom Stuctural Directives -->
+<!-- Usage 1 -->
+<div *appMyStructural="isShown">Structural Directives (Usage 1)</div>
+
+<!-- Usage 2 -->
+<ng-template [appMyStructural]="isShown" let-value="value">
+    <div>Structural Directives (Usage 2)</div>
+    <h4>value: {{ value }}</h4>
+</ng-template>
