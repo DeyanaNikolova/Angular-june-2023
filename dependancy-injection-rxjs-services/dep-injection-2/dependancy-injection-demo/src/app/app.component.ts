@@ -28,8 +28,8 @@ console.log('User has been added!');
 
   addUser(inpuName: HTMLInputElement, inputAge: HTMLInputElement): void {
     const user = { name: inpuName.value, age: Number(inputAge.value) };
-    // this.users.push(user);
-    this.users = [...this.users, user];
+     this.users.push(user);
+    // this.users = [...this.users, user];
 
     inpuName.value = '';
     inputAge.value = '';
