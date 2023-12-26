@@ -1,22 +1,26 @@
 <div id="nav">
-    <!-- <span *ngIf="toggle"> HIDE </span>
+  <!-- <span *ngIf="toggle"> HIDE </span>
     <span *ngIf="!toggle"> SHOW </span> -->
-    <!-- <span>{{ toggle ? "Show" : "Hide" }}</span> -->
-    <h3>{{ titleFromApp }}</h3>
-    <span *ngIf="isActive">
-        <ul>
-            <li *ngFor="let user of activeUsers">
-                <span [class.green]="user.age % 2 === 0" [class.red]="user.age % 2 !== 0">
-                    {{ user.name + ': ' + user.age }}
-                </span>
-            </li>
-        </ul>
-    </span>
-    <span *ngIf="!isActive">
-        <div>Nothing is Active! :(</div>
-    </span>
+  <!-- <span>{{ toggle ? "Show" : "Hide" }}</span> -->
+  <h3>{{ titleFromApp }}</h3>
+  <span *ngIf="isActive">
+    <ul>
+      <li *ngFor="let user of activeUsers">
+        <span
+          [class.green]="user.age % 2 === 0"
+          [class.red]="user.age % 2 !== 0"
+        >
+          {{ user.name + ": " + user.age }}
+        </span>
+      </li>
+    </ul>
+  </span>
+  <span *ngIf="!isActive">
+    <div>Nothing is Active! :(</div>
+  </span>
 
-    <input [value]="inputValue" type="text" />
-    <button (click)="handleClick($event)">Make {{ isActive ? "Inactive" : "Active" }}</button>
+  <input [value]="inputValue" type="text" />
+  <button (click)="handleClick($event)">
+    Make {{ isActive ? "Inactive" : "Active" }}
+  </button>
 </div>
-
