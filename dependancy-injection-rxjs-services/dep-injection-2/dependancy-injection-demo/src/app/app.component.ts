@@ -15,11 +15,23 @@ export class AppComponent {
     { name: 'Penka', age: 82 },
   ];
 
+  constructor() {
+    setInterval(()=>{
+this.users.push({
+  name: 'DemoName',
+  age: 0
+});
+console.log('User has been added!');
+
+    }, 3000);
+  }
+
   addUser(inpuName: HTMLInputElement, inputAge: HTMLInputElement): void {
     const user = { name: inpuName.value, age: Number(inputAge.value) };
-    this.users.push(user);
+    // this.users.push(user);
+    this.users = [...this.users, user];
 
     inpuName.value = '';
     inputAge.value = '';
-  }
+  } 
 }
