@@ -1,1 +1,8 @@
-<h2>{{ title }} works</h2>
+<h2>{{ title }}</h2>
+
+<div>
+  <input #inputName type="text" placeholder="name"/>
+  <input #inputAge type="text" placeholder="age"/>
+  <button (click)="addUser(inputName, inputAge)">Add user</button>
+</div>
+<app-users-list  [users]="users"/>
