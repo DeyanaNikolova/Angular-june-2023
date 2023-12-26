@@ -17,6 +17,6 @@ export class NavigationComponent {
 
   handleClick(event: Event): void {
    this.isActive = !this.isActive; 
-   this.onChildOutput.emit(this.isActive)
+   this.onChildOutput.emit(this.isActive);
   }
 }
