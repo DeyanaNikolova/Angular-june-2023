@@ -6,12 +6,7 @@ import { User } from './types/User';
 // })
 export class UserService {
 
-  users: User[] = [
-    { name: 'Ivan', age: 22 },
-    { name: 'Mitko', age: 12 },
-    { name: 'Pesho', age: 32 },
-    { name: 'Penka', age: 82 },
-  ];
+  users: User[] = [];
 
   constructor() {
     setInterval(()=>{
@@ -32,4 +27,9 @@ console.log('User has been added!');
     inpuName.value = '';
     inputAge.value = '';
   } 
+
+  getUsers(){
+    return fetch('https://jsonplaceholder.typicode.com/users')
+    .then(res=>res.json())
+  }
 }
