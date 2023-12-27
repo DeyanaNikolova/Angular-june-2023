@@ -9,12 +9,13 @@ import { User } from './types/User';
 })
 export class AppComponent {
   title = 'Dependancy Injection 2';
-  appUsers: User[] = []
+  appUsers: User[] = [];
+
 constructor(public userService: UserService) {
  this.appUsers = this.userService.users;
 }
 
-setUser(inputName: HTMLInputElement, inpitAge: HTMLInputElement){
+setUser(inputName: HTMLInputElement, inpitAge: HTMLInputElement): void{
   this.userService.addUser(inputName, inpitAge);
 }
 }
