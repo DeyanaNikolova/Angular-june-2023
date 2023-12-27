@@ -1,5 +1,10 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
-import { User } from '../types/User';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  Input,
+} from '@angular/core';
+import { User } from '../types/UserPlaceholder';
 @Component({
   selector: 'app-users-list',
   templateUrl: './users-list.component.html',
@@ -7,16 +12,14 @@ import { User } from '../types/User';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersListComponent {
-@Input() users: User[] = [];
+  @Input() users: User[] = [];
 
-constructor(private cd: ChangeDetectorRef) {
- 
-}
-ngOnChanges(){
-  console.log('invoked from ngOnChanges');
-}
+  constructor(private cd: ChangeDetectorRef) {}
+  ngOnChanges() {
+    console.log('invoked from ngOnChanges');
+  }
 
-refresh(){
-  this.cd.detectChanges();
-}
+  refresh() {
+    this.cd.detectChanges();
+  }
 }
