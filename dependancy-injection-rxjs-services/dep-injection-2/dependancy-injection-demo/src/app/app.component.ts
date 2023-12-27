@@ -11,11 +11,12 @@ export class AppComponent {
   title = 'Dependancy Injection 2';
   appUsers: User[] = [];
 
-constructor(public userService: UserService) {
- this.appUsers = this.userService.users;
-}
+  constructor(public userService: UserService) {
+    this.appUsers = this.userService.users;
+  }
 
-setUser(inputName: HTMLInputElement, inpitAge: HTMLInputElement): void{
-  this.userService.addUser(inputName, inpitAge);
-}
+  setUser(inputName: HTMLInputElement, inpitAge: HTMLInputElement): void {
+    this.userService.addUser(inputName, inpitAge);
+    this.appUsers = this.userService.users;
+  }
 }
