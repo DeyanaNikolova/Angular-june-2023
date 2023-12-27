@@ -5,8 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersListComponent } from './users-list/users-list.component';
-import { UserListItemComponent } from './user-list-item/user-list-item.component';
 import { UserService } from './user.service';
+import { UserListItemComponent } from './user-list-item/user-list-item.component';
 
 @NgModule({
   declarations: [
