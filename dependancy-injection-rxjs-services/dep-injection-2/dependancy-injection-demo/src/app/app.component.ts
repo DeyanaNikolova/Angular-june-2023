@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { UserService } from './user.service';
 import { User } from './types/User';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,31 +9,12 @@ import { User } from './types/User';
 })
 export class AppComponent {
   title = 'Dependancy Injection 2';
+  appUsers: User[] = []
+constructor(public userService: UserService) {
+ this.appUsers = this.userService.users;
+}
 
-  users: User[] = [
-    { name: 'Ivan', age: 22 },
-    { name: 'Mitko', age: 12 },
-    { name: 'Pesho', age: 32 },
-    { name: 'Penka', age: 82 },
-  ];
-
-  constructor() {
-    setInterval(()=>{
-this.users.push({
-  name: 'DemoName',
-  age: 0
-});
-console.log('User has been added!');
-
-    }, 3000);
-  }
-
-  addUser(inpuName: HTMLInputElement, inputAge: HTMLInputElement): void {
-    const user = { name: inpuName.value, age: Number(inputAge.value) };
-     this.users.push(user);
-    // this.users = [...this.users, user];
-
-    inpuName.value = '';
-    inputAge.value = '';
-  } 
+setUser(inputName: HTMLInputElement, inpitAge: HTMLInputElement){
+  this.userService.addUser(inputName, inpitAge);
+}
 }
