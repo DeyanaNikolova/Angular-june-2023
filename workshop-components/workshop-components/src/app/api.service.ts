@@ -16,6 +16,7 @@ export class ApiService {
 
   getPosts(limit?: number){
     const { appUrl } = environment;
-    return this.http.get(`${appUrl}/${limit ? `?limit=${limit}` : ''}`);
+    const limitFilter = limit ? `?limit=${limit}` : '';
+    return this.http.get(`${appUrl}/posts${limitFilter}`);
   }
 }
