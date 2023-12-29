@@ -1,3 +1,7 @@
+main {
+    width: 50%;
+}
+
 .container {
     width: 90%;
     margin: auto;
@@ -5,5 +9,11 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-evenly;
+}
+
+aside {
+    width: 29%;
+    margin-top: 1em;
+    font-size: 0.8em;
 }
 
