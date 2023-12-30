@@ -10,6 +10,7 @@ import { Post } from '../interfaces/Post';
 export class PostsListComponent implements OnInit {
   posts: Post[] = [];
   isLoading: boolean = true;
+  // thereAreNoPosts: boolean = false;
 
   constructor(private apiService: ApiService) {}
 
@@ -18,6 +19,12 @@ export class PostsListComponent implements OnInit {
       next: (posts) => {
         this.posts = posts;
         this.isLoading = false;
+
+        // Check for empty posts array
+        // this.posts = [];
+        // if (this.posts.length === 0) {
+        //   this.thereAreNoPosts = true;
+        // }
       },
       error: (err) => {
         this.isLoading = false;
