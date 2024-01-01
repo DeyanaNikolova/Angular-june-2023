@@ -20,10 +20,15 @@ export class UsersListComponent implements OnInit {
 
     // for testing purposes
     // setTimeout(()=> {
-    this.userService.fetchUsers().subscribe((users) => {
-      this.userList = users;
-      this.globalLoaderService.hideLoader();
-      console.log(users);
+    this.userService.fetchUsers().subscribe({
+      next: (users) => {
+        this.userList = users;
+        this.globalLoaderService.hideLoader();
+      },
+      error: (err) => {
+        console.error(`Error: ${err}`);
+        this.globalLoaderService.hideLoader();
+      },
     });
     // }, 3000);
   }
