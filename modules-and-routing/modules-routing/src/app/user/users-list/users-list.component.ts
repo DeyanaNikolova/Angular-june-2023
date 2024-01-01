@@ -17,11 +17,14 @@ export class UsersListComponent implements OnInit {
 
   ngOnInit(): void {
     this.globalLoaderService.showLoader();
-    
+
+    // for testing purposes
+    // setTimeout(()=> {
     this.userService.fetchUsers().subscribe((users) => {
       this.userList = users;
       this.globalLoaderService.hideLoader();
       console.log(users);
     });
+    // }, 3000);
   }
 }
