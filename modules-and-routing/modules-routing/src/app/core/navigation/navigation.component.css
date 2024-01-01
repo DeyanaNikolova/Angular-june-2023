@@ -1,0 +1,22 @@
+.nav-wrapper{
+    background-color: rgb(240, 232, 232);
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+}
+.nav-btn{
+    margin: 10px;
+    padding: 20px;
+    border: 1px soloid black;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 21px;
+    width: fit-content;
+ background-color:  rgb(159, 151, 151, 0.5);
+}
+
+.nav-btn:hover{
+    background-color: rgb(172, 170, 170);
+    color: white;
+}
