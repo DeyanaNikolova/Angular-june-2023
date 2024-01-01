@@ -9,6 +9,7 @@ import { UserModule } from './user/user.module';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -18,7 +19,7 @@ import { UserModule } from './user/user.module';
     AppRoutingModule,
     HttpClientModule,
     CoreModule,
-    UserModule
+    UserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
