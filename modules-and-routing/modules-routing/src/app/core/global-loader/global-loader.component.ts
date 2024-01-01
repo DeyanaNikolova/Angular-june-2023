@@ -7,7 +7,5 @@ import { GlobalLoaderService } from './global-loader.service';
   styleUrls: ['./global-loader.component.css']
 })
 export class GlobalLoaderComponent {
-isHidden: boolean = true;
-
 constructor(public gloabLoaderService: GlobalLoaderService) {}
 }
