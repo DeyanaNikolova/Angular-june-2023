@@ -23,7 +23,7 @@ export class UsersListComponent implements OnInit {
     this.globalLoaderService.showLoader();
 
 
-    setTimeout(()=> {
+    // setTimeout(()=> {
     this.userService.fetchUsers().subscribe({
       next: (users) => {
         this.userList = users;
@@ -34,7 +34,7 @@ export class UsersListComponent implements OnInit {
         this.globalLoaderService.hideLoader();
       },
     });
-     }, 3000);
+    //  }, 3000);
   }
 
   reloadUsers():void{
