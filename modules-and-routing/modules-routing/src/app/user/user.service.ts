@@ -13,6 +13,6 @@ constructor(private http: HttpClient) { }
   }
 
   getUserById(id: number){
-    return this.http.get<User>(`https://jsonplaceholder.typicode.com/users/${id}`)
+    return this.http.get<User>(`https://jsonplaceholder.typicode.com/users/${id}`);
   }
 }
