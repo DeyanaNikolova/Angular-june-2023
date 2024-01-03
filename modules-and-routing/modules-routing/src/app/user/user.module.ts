@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { UsersListComponent } from './users-list/users-list.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { UserRsolver } from './user-details/user-details-resolver';
 
 
 
@@ -19,6 +20,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     },
     {
       path: 'user/details/:id', 
+      resolve: { user: UserRsolver },
       component: UserDetailsComponent
     }
   ])
