@@ -11,4 +11,8 @@ constructor(private http: HttpClient) { }
   fetchUsers(){
     return this.http.get<User[]>('https://jsonplaceholder.typicode.com/users');
   }
+
+  getUserById(id: number){
+    return this.http.get<User>(`https://jsonplaceholder.typicode.com/users/${id}`)
+  }
 }
