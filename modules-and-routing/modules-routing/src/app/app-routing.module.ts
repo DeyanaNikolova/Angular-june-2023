@@ -7,9 +7,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', component: UsersListComponent },
   { path: 'users-list', component: UsersListComponent },
   {
-    path: 'todo-list',
-    component: TodoListComponent,
-  },
+    path: 'todo-list', component: TodoListComponent},
 ];
 
 @NgModule({
