@@ -10,7 +10,6 @@ export class UserDetailsComponent {
   constructor(private activetedRoute: ActivatedRoute) {
     // static way
     console.log('snapshot.data', this.activetedRoute.snapshot.data['user']);
-
     // dynamic way
     this.activetedRoute.params.subscribe((v) =>
       console.log('params.subscribe', v)
