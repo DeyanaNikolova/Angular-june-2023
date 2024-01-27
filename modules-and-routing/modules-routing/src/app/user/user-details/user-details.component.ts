@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { User } from 'src/app/types/User';
 
 @Component({
   selector: 'app-user-details',
@@ -7,16 +8,17 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./user-details.component.css'],
 })
 export class UserDetailsComponent implements OnInit {
+
   constructor(
     private activetedRoute: ActivatedRoute,
   ) {
     console.log('snapshot.data', this.activetedRoute.snapshot.data['user']);
-    this.activetedRoute.params.subscribe((v) =>
-      console.log('parans.subscribe', v)
+   this.activetedRoute.params.subscribe((v) =>
+      console.log('params.subscribe', v)
     );
   }
 
   ngOnInit(): void {
- 
+
   }
 }
