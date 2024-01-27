@@ -1,2 +1,29 @@
-<p>user-details works</p>
+<div class="container">
+  <div class="user-image">
+    <img
+      src="../../../assets/images/profile.png"
+      alt="this image contains user-image"
+    />
+  </div>
+  <div class="content">
+    <div class="wrapper">
+      <h3 class="name">{{ user.name }}</h3>
+      <h2 class="username">Username: {{ user.username }}</h2>
+      <h2 class="username">Website: {{ user.website }}</h2>
+      <h2 class="username">Email: {{ user.email }}</h2>
+      <h2 class="username">Phone Number: {{ user.phone }}</h2>
+    </div>
+    <div class="wrapper">
+      <p class="details">
+        Address: {{ user.address.city }}, {{ user.address.zipcode }},
+        {{ user.address.street }},
+        {{ user.address.suite }}
+      </p>
+      <p class="details">
+        Company: {{ user.company.name }}, {{ user.company.catchPhrase }},
+      </p>
+    </div>
 
+    <a class="effect effect-4" href="#"> Message </a>
+  </div>
+</div>
