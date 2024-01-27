@@ -23,7 +23,7 @@ import { routes } from './app-routing.module';
     CoreModule,
     UserModule,
     TodoModule,
-    RouterModule.forChild(routes)
+  //  RouterModule.forChild(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
