@@ -9,7 +9,7 @@ const routes: Routes = [
     component: MainComponent,
   },
   {
-    path: 'new-theme',
+    path: 'add-theme',
     component: NewThemeComponent,
   },
 ];
