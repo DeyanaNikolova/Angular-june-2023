@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../user.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -10,7 +9,6 @@ import { ActivatedRoute } from '@angular/router';
 export class UserDetailsComponent implements OnInit {
   constructor(
     private activetedRoute: ActivatedRoute,
-    private userService: UserService
   ) {
     console.log('snapshot.data', this.activetedRoute.snapshot.data['user']);
     this.activetedRoute.params.subscribe((v) =>
