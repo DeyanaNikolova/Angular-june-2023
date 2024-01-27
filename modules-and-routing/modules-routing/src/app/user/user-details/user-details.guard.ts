@@ -25,6 +25,6 @@ export class AuthGuard implements CanActivate {
     }
 
     checkIfLogged(url: string): boolean{
-        return false;
+        return true;
     }
 }
