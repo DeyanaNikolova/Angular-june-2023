@@ -5,26 +5,22 @@ import { UsersListComponent } from './users-list/users-list.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserRsolver } from './user-details/user-details-resolver';
 
-
-
-
 @NgModule({
-  declarations: [
-    UsersListComponent,
-  ],
+  declarations: [UsersListComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild([{
-      path: 'users/list', 
-      component: UsersListComponent
-    },
-    {
-      path: 'user/details/:id', 
-      resolve: { user: UserRsolver },
-      component: UserDetailsComponent
-    }
-  ])
+    RouterModule.forChild([
+      {
+        path: 'users/list',
+        component: UsersListComponent,
+      },
+      {
+        path: 'user/details/:id',
+        resolve: { user: UserRsolver },
+        component: UserDetailsComponent,
+      },
+    ]),
   ],
-  exports:[UsersListComponent]
+  exports: [UsersListComponent],
 })
-export class UserModule { }
+export class UserModule {}
