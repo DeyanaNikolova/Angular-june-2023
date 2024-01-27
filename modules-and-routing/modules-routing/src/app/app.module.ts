@@ -7,7 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
 import { UserModule } from './user/user.module';
 import { TodoModule } from './todo/todo.module';
-
+import { RouterModule } from '@angular/router';
+import { routes } from './app-routing.module';
 
 
 
@@ -21,7 +22,8 @@ import { TodoModule } from './todo/todo.module';
     HttpClientModule,
     CoreModule,
     UserModule,
-    TodoModule
+    TodoModule,
+    RouterModule.forChild(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
