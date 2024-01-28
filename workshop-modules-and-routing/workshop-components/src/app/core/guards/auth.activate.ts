@@ -8,12 +8,9 @@ import {
 import { Observable } from 'rxjs';
 import { UserService } from 'src/app/user/user.service';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable({ providedIn: 'root' })
 export class AuthActivate implements CanActivate {
 
-    
     constructor(
         private userService: UserService
         
