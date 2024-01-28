@@ -17,8 +17,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     MainComponent,
+    HomeComponent,
     ThemesListComponent,
     PostsListComponent,
     WelcomeComponent,
