@@ -27,6 +27,8 @@
 
 .theme-title {
     padding: 0;
+    width: 95%;
+    margin: 0 auto;
 }
 
 .theme-name {
@@ -68,4 +70,5 @@ time {
 .welcome-comp{
     width: 80%;
     margin: 0 auto;
+    margin-bottom: 50px;
 }
