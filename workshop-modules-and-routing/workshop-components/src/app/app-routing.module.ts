@@ -16,15 +16,21 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path:'login', component: LoginComponent
+    path: 'login',
+    component: LoginComponent,
   },
   {
-    path: 'register', component: RegisterComponent
+    path: 'register',
+    component: RegisterComponent,
   },
-  // {
-  //   path: '**',
-  //   component: NotFoundComponent
-  // },
+  {
+    path: '404',
+    component: NotFoundComponent
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
+  },
 ];
 
 @NgModule({
