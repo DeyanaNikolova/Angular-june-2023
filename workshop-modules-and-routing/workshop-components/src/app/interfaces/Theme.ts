@@ -1,7 +1,9 @@
+import { Post } from "./Post";
 import { User } from "./User";
+
 export interface Theme{
 subscribers: string[];
-posts: string[];
+posts: any; // string[] | Post[];
 _id: string;
 themeName: string;
 userId: User;
