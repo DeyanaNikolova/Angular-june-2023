@@ -2,6 +2,7 @@
     <div *ngIf="isLoading">
         <app-loader />
     </div>
+    <app-welcome />
     <div *ngIf="!isLoading" class="theme-title">
         <div *ngFor="let theme of themes" class="theme-container">
             <div class="theme-name-wrapper">
@@ -13,7 +14,7 @@
                         <div>
                             <p>Date: <time>{{ theme.created_at }}</time></p>
                             <div class="nick-name">
-                                <p>Username: <span>{{ theme.userId.username }}</span></p>
+                                <p>Username: <span>{{ theme.user.firstName }}</span></p>
                             </div>
                         </div>
                         <div class="subscribers">
