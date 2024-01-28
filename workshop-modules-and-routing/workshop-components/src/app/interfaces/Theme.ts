@@ -4,7 +4,7 @@ subscribers: string[];
 posts: string[];
 _id: string;
 themeName: string;
-userId: User;
+user: User;
 created_at: string;
 updatedAt: string;
 __v: number;

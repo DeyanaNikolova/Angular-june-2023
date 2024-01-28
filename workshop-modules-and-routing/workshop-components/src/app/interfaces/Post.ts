@@ -5,7 +5,7 @@ export interface Post{
 likes: number[];
 _id: string;
 text: string;
-userId: User;
+user: User;
 themeId: Theme;
 created_at: string;
 updatedAt: string;
