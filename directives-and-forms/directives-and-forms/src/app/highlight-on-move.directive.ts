@@ -10,6 +10,7 @@ import {
   selector: '[appHighlightOnMove]',
 })
 export class HighlightOnMoveDirective implements OnInit, OnDestroy {
+  
   constructor(private elRef: ElementRef, private renderer: Renderer2) {}
 
   unsubscribeFromEvents: (() => void)[] = [];
