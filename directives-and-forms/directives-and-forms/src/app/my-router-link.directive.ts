@@ -1,10 +1,27 @@
-import { Directive } from '@angular/core';
+import { Directive, ElementRef, OnInit, Renderer2, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Directive({
-  selector: '[appMyRouterLink]'
+  selector: '[appMyRouterLink]',
 })
-export class MyRouterLinkDirective {
+export class MyRouterLinkDirective implements OnInit {
+@Input()appMyRouterLink: string = '';
 
-  constructor() { }
+  constructor(
+    private elRef: ElementRef,
+    private renderer: Renderer2,
+    private router: Router
+  ) {}
 
+  ngOnInit(): void {
+    this.renderer.listen(
+      this.elRef.nativeElement,
+      'click',
+      this.clickHandler.bind(this)
+    );
+  }
+  clickHandler(e: MouseEvent): void {
+    console.log(this.appMyRouterLink);
+     this.router.navigate([this.appMyRouterLink]);
+  }
 }
