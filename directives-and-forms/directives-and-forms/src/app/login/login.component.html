@@ -2,13 +2,42 @@
   <!-- EMAIL -->
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="text" id="email" name="email" ngModel email required/>
+    <input
+      type="text"
+      id="email"
+      name="email"
+      ngModel
+      email
+      required
+      #emailInput="ngModel"
+    />
+  </div>
+  <!-- email error message -->
+  <div *ngIf="emailInput.touched">
+    <div *ngIf="emailInput.errors?.['required']">Email is required!</div>
+    <div *ngIf="emailInput.errors?.['email']">Invalid email!</div>
   </div>
 
   <!-- PASSWORD -->
   <div class="form-group">
     <label for="password">Password</label>
-    <input type="text" id="password" name="password" ngModel />
+    <input
+      type="text"
+      id="password"
+      name="password"
+      ngModel
+      required
+      [appMaxCount]="4"
+      #passwordInput="ngModel"
+    />
+  </div>
+
+  <!-- Password error message -->
+  <div *ngIf="passwordInput.touched">
+    <div *ngIf="passwordInput.errors?.['appMaxCount']">
+        Invalid Password, because length is longer than
+         {{passwordInput?.errors?.['appMaxCount'] }}...</div>
+    <div *ngIf="passwordInput.errors?.['required']">Password is required!</div>
   </div>
   <button>Login</button>
 </form>
@@ -16,4 +45,4 @@
 <br />
 <br />
 <br />
-{{ loginForm.value |  json }}
+{{ loginForm.value | json }}
