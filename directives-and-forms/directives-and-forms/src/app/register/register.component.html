@@ -12,10 +12,10 @@
       />
     </div>
     <!-- email error message -->
-    <!-- <div *ngIf="emailInput.touched">
-      <div *ngIf="emailInput.errors?.['required']">Email is required!</div>
-      <div *ngIf="emailInput.errors?.['email']">Invalid email!</div>
-    </div> -->
+    <div *ngIf="registerForm.get('email')?.touched">
+      <div *ngIf="registerForm.get('email')?.errors?.['required']">Email is required!</div>
+      <div *ngIf="registerForm.get('email')?.errors?.['email']">Invalid email!</div>
+    </div>
   
     <!-- PASSWORD -->
     <div class="form-group">
@@ -29,12 +29,16 @@
     </div>
   
     <!-- Password error message -->
-    <!-- <div *ngIf="passwordInput.touched">
-      <div *ngIf="passwordInput.errors?.['appMaxCount']">
-          Invalid Password, because length is longer than
-           {{passwordInput?.errors?.['appMaxCount'] }}...</div>
-      <div *ngIf="passwordInput.errors?.['required']">Password is required!</div>
-    </div> -->
+    <!-- <div *ngIf="registerForm.get('password')?.touched"> -->
+      <div *ngIf="registerForm.get('password')?.errors?.['required']">
+        Password is required!</div>
+      <div *ngIf="registerForm.get('password')?.errors?.['minlength']">
+        Password should be at least {{ registerForm.get('password')?.errors?.['minlength'].requiredLength }} characters long!
+    </div>
+    <div *ngIf="registerForm.get('password')?.errors?.['maxlength']">
+        Password should be no more than {{ registerForm.get('password')?.errors?.['maxlength'].requiredLength }} charachters long!
+    </div>
+    <!-- </div> -->
     <button>Login</button>
   </form>
   
