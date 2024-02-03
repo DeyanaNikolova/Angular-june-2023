@@ -1,3 +1,4 @@
+<h2>Login Form</h2>
 <form #loginForm="ngForm" (ngSubmit)="submitHandler(loginForm)">
   <!-- EMAIL -->
   <div class="form-group">
@@ -27,7 +28,7 @@
       name="password"
       ngModel
       required
-      [appMaxCount]="4"
+      [appMaxCount]="10"
       #passwordInput="ngModel"
     />
   </div>
