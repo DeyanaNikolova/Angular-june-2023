@@ -19,6 +19,7 @@ export class RegisterComponent implements OnInit{
   }
 
   submitHandler(): void{
+console.log(this.registerForm.get('password'));
 
   }
 }
