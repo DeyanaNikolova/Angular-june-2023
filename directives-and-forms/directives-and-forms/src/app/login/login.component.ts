@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   // will rendere only tyhe static content
 ngOnInit(): void {
-  //  this.loginForm.valueChanges.subscribe()
+ //   this.loginForm.get('email')?.valueChanges.subscribe()
 }
 
 // ngAfterViewInit(): void {
