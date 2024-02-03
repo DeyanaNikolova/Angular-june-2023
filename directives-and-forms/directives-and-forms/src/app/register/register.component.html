@@ -29,7 +29,7 @@
     </div>
   
     <!-- Password error message -->
-    <!-- <div *ngIf="registerForm.get('password')?.touched"> -->
+    <div *ngIf="registerForm.get('password')?.touched">
       <div *ngIf="registerForm.get('password')?.errors?.['required']">
         Password is required!</div>
       <div *ngIf="registerForm.get('password')?.errors?.['minlength']">
@@ -38,7 +38,7 @@
     <div *ngIf="registerForm.get('password')?.errors?.['maxlength']">
         Password should be no more than {{ registerForm.get('password')?.errors?.['maxlength'].requiredLength }} charachters long!
     </div>
-    <!-- </div> -->
+    </div>
     <button>Login</button>
   </form>
   
