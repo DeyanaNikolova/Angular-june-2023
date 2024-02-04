@@ -24,10 +24,6 @@ const routes: Routes = [
     component: RegisterComponent,
   },
   {
-    path: '404',
-    component: NotFoundComponent
-  },
-  {
     path: '**',
     component: NotFoundComponent
   },
