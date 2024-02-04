@@ -25,7 +25,9 @@ export class RegisterComponent {
   constructor(private fb: FormBuilder) {}
 
   register():void{
+    if(this.form.invalid){
+      return;
+    }
     console.log(this.form.value);
-    
   }
 }
