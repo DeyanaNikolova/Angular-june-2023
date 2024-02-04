@@ -12,8 +12,8 @@
                 name="email" 
                 id="email" 
                 placeholder="john.doe@gmail.com"
-                #inputEmail="ngModel"
                 ngModel
+                #inputEmail="ngModel"
                 required
                 [appEmail]="appEmailDomains"
                 >
@@ -22,11 +22,11 @@
                 <p class="error" *ngIf="inputEmail.errors?.['required']">
                     Email is required!
                 </p>
-                <p class="error">
+                <p class="error" *ngIf="inputEmail.errors?.['appEmailValidator']">
                     Email is not valid!
                 </p>
             </ng-container>
-          
+      
 
             <p class="field field-icon">
                 <label for="password"><span><i class="fas fa-lock"></i></span></label>
