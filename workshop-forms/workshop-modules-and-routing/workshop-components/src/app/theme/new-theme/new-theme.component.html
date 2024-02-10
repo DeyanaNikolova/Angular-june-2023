@@ -43,9 +43,8 @@
       </div>
       <div class="new-theme-buttons">
         <button class="cancel">Cancel</button>
-        <button class="public">Post</button>
+        <button [disabled]="form.invalid" class="public">Post</button>
       </div>
     </form>
-    {{ form.value | json }}
   </div>
 </div>
