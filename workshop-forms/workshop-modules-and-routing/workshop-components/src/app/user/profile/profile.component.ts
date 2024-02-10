@@ -20,18 +20,19 @@ export class ProfileComponent {
   profileDetails: Profile = {
     username: 'John',
     email: 'john.doe@gmail.com',
-    tel: '888-888-888'
+    tel: '888-888-888',
   };
 
-form = this.fb.group({
-  username: ['', [Validators.required, Validators.minLength(5)]],
-  email: ['', [Validators.required, appEmailValidator(DEFAULT_EMAIL_DOMAINS)]],
-  tel: ['']
-})
-  constructor(private fb: FormBuilder){
+  form = this.fb.group({
+    username: ['', [Validators.required, Validators.minLength(5)]],
+    email: [
+      '',
+      [Validators.required, appEmailValidator(DEFAULT_EMAIL_DOMAINS)],
+    ],
+    tel: [''],
+  });
 
-  }
-  
+  constructor(private fb: FormBuilder) {}
 
   toggleEditMode(): void {
     this.isEditMode = !this.isEditMode;
@@ -41,8 +42,8 @@ form = this.fb.group({
     if (this.form.invalid) {
       return;
     }
-    this.profileDetails = {...this.form.value} as Profile
+    this.profileDetails = { ...this.form.value } as Profile;
     console.log(this.form.value);
-    this.toggleEditMode()
+    this.toggleEditMode();
   }
 }
