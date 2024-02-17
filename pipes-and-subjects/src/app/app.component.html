@@ -2,4 +2,13 @@
 <div>
   <h1>Pipes Interceptors and Subjets</h1>
 </div>
-  
+<div>{{ user | json }}</div>
+<div>
+  <h2>
+    Sum of list:
+    {{ user.list | reduce : sum : 0 }}
+  </h2>
+  <button (click)="addProperty()">Add property</button>
+</div> 
+
+<div>Promise: {{ p | async }}</div>
