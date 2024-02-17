@@ -13,7 +13,7 @@ export class ReducePipe<T> implements PipeTransform {
   ): unknown {
     // const sum = (acc, curr)=> acc + curr;
     // [1, 2, 3].reduce(sum, 0)
-    console.log('Invoced from ReducePipe');
+    console.log('Invoked from ReducePipe');
     
     return array.reduce(reduceFn, initialValue);
   }
