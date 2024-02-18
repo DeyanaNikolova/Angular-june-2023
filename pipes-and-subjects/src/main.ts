@@ -18,7 +18,7 @@ platformBrowserDynamic().bootstrapModule(AppModule)
 //   });
 
 
-// Observable/Subject Demo
+// Observable Demo
 //   const o$ = new Observable<number>((obs)=>{
 //     obs.next(1000);
 //     obs.next(2000);
@@ -35,4 +35,34 @@ platformBrowserDynamic().bootstrapModule(AppModule)
 //   next: console.log,
 //   error: (err)=> console.error(`Error: ${err}`),
 //   complete: ()=>console.log('Obs completed!')
-// })
+// });
+
+// function interval(delay: number, counter?: number){
+//   let count = 0;
+//   return new Observable((obs)=>{
+//     if(count === counter){
+//       obs.complete();
+//       return;
+//     }
+//     const i = setInterval(()=>{
+//       obs.next(count++);
+//     }, delay);
+
+//     return ()=>{
+//       clearInterval(i);
+//     }
+//   });
+// }
+
+// const subscribtion = interval(1000, 8).subscribe({
+//   next: console.log,
+//   error: (err)=>console.error(`Error: ${err}`),
+//   complete: ()=> console.log('Obs completed!'),
+// });
+
+
+// setTimeout(() => {
+//   subscribtion.unsubscribe();
+// }, 3000);
+
+// Subject Demo
