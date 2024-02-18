@@ -103,11 +103,11 @@ platformBrowserDynamic()
 // rSubj$$.subscribe((d)=>console.log('Subscribe 2: ', d));
 
 // Async Subject
-const aSubj$$ = new AsyncSubject();
-aSubj$$.next(1);
-aSubj$$.next(2);
-aSubj$$.next(3);
-aSubj$$.subscribe((d)=>console.log('Subscribe 1: ', d));
-aSubj$$.next(5);
-aSubj$$.subscribe((d)=>console.log('Subscribe 2: ', d));
-aSubj$$.complete();
+// const aSubj$$ = new AsyncSubject();
+// aSubj$$.next(1);
+// aSubj$$.next(2);
+// aSubj$$.next(3);
+// aSubj$$.subscribe((d)=>console.log('Subscribe 1: ', d));
+// aSubj$$.next(5);
+// aSubj$$.subscribe((d)=>console.log('Subscribe 2: ', d));
+// aSubj$$.complete();
