@@ -4,12 +4,14 @@ import { LasyComponent } from './lasy/lasy.component';
 
 
 
+
 @NgModule({
   declarations: [
     LasyComponent
   ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+  ],
+
 })
 export class LazyModule { }
