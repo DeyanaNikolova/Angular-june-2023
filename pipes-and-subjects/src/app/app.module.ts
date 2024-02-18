@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ReducePipe } from './reduce.pipe';
+import { HttpClientModule } from '@angular/common/http';
+import { appInterceptorProvider } from './app-interceptor';
 
 @NgModule({
   declarations: [
@@ -10,9 +12,10 @@ import { ReducePipe } from './reduce.pipe';
     ReducePipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [appInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
