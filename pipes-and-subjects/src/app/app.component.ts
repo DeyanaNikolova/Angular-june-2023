@@ -7,14 +7,13 @@ import { UserService } from './user.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   user = {
     name: 'Pesho',
     age: 12,
     list: [1, 2, 3, 4, 5, 6, 7, 8],
   };
 
-  
   constructor(private userService: UserService) {}
 
   sum(a: number, b: number): number {
@@ -35,10 +34,9 @@ export class AppComponent implements OnInit{
   });
 
   time$ = interval(1000).pipe(map(() => new Date()));
-ngOnInit(): void {
-  this.userService.loadUsers().subscribe({
-    next: console.log,
-    
-  })
-}
+  ngOnInit(): void {
+    this.userService.loadUsers().subscribe({
+      next: console.log,
+    });
+  }
 }
