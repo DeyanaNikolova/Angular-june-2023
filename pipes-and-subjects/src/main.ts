@@ -1,7 +1,7 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs';
 
 platformBrowserDynamic().bootstrapModule(AppModule)
@@ -66,3 +66,14 @@ platformBrowserDynamic().bootstrapModule(AppModule)
 // }, 3000);
 
 // Subject Demo
+const subj$$ = new Subject();
+subj$$.subscribe(console.log);
+subj$$.next(123);
+subj$$.subscribe(console.log);
+subj$$.subscribe(console.log);
+subj$$.next(400);
+// subj$$.subscribe({
+//   next: console.log,
+//   error: (err)=>console.error(`Error: ${err}`),
+//   complete: ()=> console.log('Obs completed!'),
+// })
