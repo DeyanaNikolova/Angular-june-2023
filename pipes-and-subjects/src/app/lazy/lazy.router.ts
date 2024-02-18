@@ -5,7 +5,7 @@ import { LasyComponent } from './lasy/lasy.component';
 const routes: Routes = [
   {
     path: '',
-    pathMatch:'full',
+    pathMatch: 'full',
     component: LasyComponent,
   },
 ];
