@@ -4,9 +4,11 @@ import {
   HttpHandler,
   HttpInterceptor,
   HttpEvent,
+  HTTP_INTERCEPTORS,
 } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { API_URL } from './constants';
+import { Provider } from '@angular/core';
 
 export class AppInterceptor implements HttpInterceptor {
   intercept(
@@ -28,4 +30,10 @@ export class AppInterceptor implements HttpInterceptor {
       })
     );
   }
+}
+
+export const appInterceptorProvider: Provider = {
+provide: HTTP_INTERCEPTORS,
+multi: true,
+useClass: AppInterceptor
 }
