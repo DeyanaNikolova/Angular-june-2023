@@ -7,7 +7,7 @@ import { UserService } from './user.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   user = {
     name: 'Pesho',
     age: 12,
@@ -34,13 +34,20 @@ export class AppComponent implements OnInit {
   });
 
   time$ = interval(1000).pipe(map(() => new Date()));
-  ngOnInit(): void {
-    this.userService.loadUsers().subscribe({
-      next: console.log,
-      error: (err)=>{
-        console.error(`Error from appComponent: ${JSON.stringify(err)}`)
-        
-      }
-    });
+
+users$ = this.userService.userObs$;
+isLoadingUsersObs$ = this.userService.isLoadingUsersObs$;
+  reloadUsers(): void{
+    this.userService.loadUsers();
   }
+
+  // ngOnInit(): void {
+  //   this.userService.loadUsers().subscribe({
+  //     next: console.log,
+  //     error: (err)=>{
+  //       console.error(`Error from appComponent: ${JSON.stringify(err)}`)
+        
+  //     }
+  //   });
+  // }
 }
