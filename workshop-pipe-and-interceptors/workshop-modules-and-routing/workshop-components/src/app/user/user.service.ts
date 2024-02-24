@@ -31,8 +31,20 @@ export class UserService {
     return this.http.post('/api/login', { email, password });
   }
 
-  register(username: string, email: string, password: string, rePassword: string, tel: string){
-    return this.http.post('/api/register', { username, email, password, rePassword, tel });
+  register(
+    username: string,
+    email: string,
+    password: string,
+    rePassword: string,
+    tel: string
+  ) {
+    return this.http.post('/api/register', {
+      username,
+      email,
+      password,
+      rePassword,
+      tel,
+    });
   }
 
   logout(): void {
