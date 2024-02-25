@@ -17,6 +17,6 @@ import { ElapsedTimePipe } from './pipes/elapsed-time.pipe';
   imports: [
     CommonModule
   ],
-  exports: [LoaderComponent, AppEmailDirective, SlicePipe]
+  exports: [LoaderComponent, AppEmailDirective, SlicePipe, ElapsedTimePipe]
 })
 export class SharedModule { }
