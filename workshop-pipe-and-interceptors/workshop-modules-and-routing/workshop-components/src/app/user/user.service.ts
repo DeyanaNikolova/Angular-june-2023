@@ -11,7 +11,7 @@ export class UserService implements OnDestroy{
   public user$ = this.user$$.asObservable();
 
   user: User | undefined;
-  USER_KEY = '[user]';
+  // USER_KEY = '[user]';
 
   subscription: Subscription;
 
@@ -52,6 +52,10 @@ export class UserService implements OnDestroy{
     return this.http
     .post<User>('/api/logout', {})
     .pipe(tap(() => this.user$$.next(undefined)));
+  }
+
+  getProfile(){
+  return this.http.get<User>('/api/users/profile').pipe(tap((user)=> this.user$$.next(user)));
   }
 
   ngOnDestroy(): void {
