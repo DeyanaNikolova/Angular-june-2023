@@ -1,1 +1,4 @@
-<p>authenticate works!</p>
+<app-loader *ngIf="isAuthenticating"/>
+<ng-content *ngIf="!isAuthenticating" />
+<!-- wrapping the hwole application -->
+
