@@ -10,5 +10,5 @@ export interface User {
     // created_at: string;
     // updatedAt: string;
     // __v: number;
-    firstName: string;
+    // firstName: string;
 }
