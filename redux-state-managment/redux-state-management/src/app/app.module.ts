@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ReduxSimulationComponent } from './redux-simulation/redux-simulation.component';
 import { TranslateComponent } from './translate/translate.component';
 import { StoreModule } from '@ngrx/store';
+import { translateReducer } from './translate/translate.reducer';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { StoreModule } from '@ngrx/store';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot()
+    StoreModule.forRoot({message: translateReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]
