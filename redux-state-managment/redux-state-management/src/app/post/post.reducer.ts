@@ -10,7 +10,7 @@ const defaultState: Post = {
 };
 
 // helper function to combine state
-function newState(state: Post, newData: Post) {
+function newState(state: Post = defaultState, newData: Post) {
   return { ...state, ...newData };
 }
 
@@ -19,7 +19,7 @@ export function postReducer(state: Post, action: Action) {
 
   switch (action.type) {
     case PostAction.EDIT_TEXT:
-      return newState(state, { text: action.type });
+      return newState(state, { text: action.payload });
 
     case PostAction.RESET:
       return defaultState;
