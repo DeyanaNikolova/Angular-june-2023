@@ -14,4 +14,17 @@ export class TranslateComponent {
   constructor(private store: Store<TranslateState>) {
     this.message$ = this.store.select('message');
   }
+
+  bulgarianMsg(){
+    this.store.dispatch({type: 'BULGARIAN'});
+  }
+  italianMsg(){
+    this.store.dispatch({type: 'ITALIAN'});
+  }
+  deutschMsg(){
+    this.store.dispatch({type: 'DEUTSCH'});
+  } 
+  englishMsg(){
+    this.store.dispatch({type: 'ENGLISH'})
+  }
 }
