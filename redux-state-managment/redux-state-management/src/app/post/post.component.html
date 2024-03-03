@@ -1,3 +1,17 @@
-<div>
-    <h3>Post Page</h3>
+<div *ngIf="post$ | async as p">
+  <h3>{{ p.text }}</h3>
+  <div>
+    Likes:
+    <h4>{{ p.likes }}</h4>
+  </div>
+  <div>
+      <button (clik)="resetPost()">Reset</button>
+      <button (clik)="upvotePost()">Upvote</button>
+      <button (clik)="downvotePost()">Downvote</button>
+      
+      <div>
+          <input type="text" [ngModel]="textMsg" />
+          <button (clik)="editText()">Edit</button>
+    </div>
+  </div>
 </div>
