@@ -1,20 +1,20 @@
-import { PostState } from './post.type';
+import { PostState, Post } from './post.type';
 import * as PostAction from './post.actions';
 
 export type Action = PostAction.All;
 
 // Define application default state
-const defaultState: PostState = {
+const defaultState: Post = {
   text: 'I am default text',
   likes: 0,
 };
 
 // helper function to combine state
-function newState(state: PostState, newData: PostState) {
+function newState(state: Post, newData: Post) {
   return { ...state, ...newData };
 }
 
-export function postReducer(state: PostState, action: Action) {
+export function postReducer(state: Post, action: Action) {
   console.log(action.type, state);
 
   switch (action.type) {
