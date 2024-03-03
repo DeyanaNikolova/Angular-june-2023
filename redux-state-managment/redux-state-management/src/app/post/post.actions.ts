@@ -10,7 +10,6 @@ export const DOWNVOTE = '[Post] Downvote';
 // Define Actions
 export class EditText implements Action {
     readonly type = EDIT_TEXT;
-
     constructor(payload: string){}
 }
 
