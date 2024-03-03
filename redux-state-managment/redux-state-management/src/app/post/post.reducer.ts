@@ -4,7 +4,7 @@ import * as PostAction from './post.actions';
 export type Action = PostAction.All;
 
 // Define application default state
-const defaultDate: PostState = {
+const defaultState: PostState = {
   text: 'I am default text',
   likes: 0,
 };
@@ -22,7 +22,7 @@ export function postReducer(state: PostState, action: Action) {
       return newState(state, { text: action.type });
 
     case PostAction.RESET:
-      return defaultDate;
+      return defaultState;
 
     case PostAction.DOWNVOTE:
       return newState(state, {
@@ -33,7 +33,7 @@ export function postReducer(state: PostState, action: Action) {
       return newState(state, {
         likes: state?.likes !== undefined ? state.likes + 1 : 0,
       });
-      
+
     default:
       return state;
   }
