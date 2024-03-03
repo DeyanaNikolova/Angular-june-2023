@@ -8,6 +8,7 @@ import { TranslateComponent } from './translate/translate.component';
 import { StoreModule } from '@ngrx/store';
 import { translateReducer } from './translate/translate.reducer';
 import { PostComponent } from './post/post.component';
+import { postReducer } from './post/post.reducer';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { PostComponent } from './post/post.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({message: translateReducer})
+    StoreModule.forRoot({message: translateReducer, post: postReducer as any}),
   ],
   providers: [],
   bootstrap: [AppComponent]
