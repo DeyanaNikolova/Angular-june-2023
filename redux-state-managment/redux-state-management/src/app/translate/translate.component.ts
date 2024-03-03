@@ -15,6 +15,7 @@ export class TranslateComponent {
     this.message$ = this.store.select('message');
   }
 
+  // Dispatch action to modify the data
   bulgarianMsg(){
     this.store.dispatch({type: 'BULGARIAN'});
   }
