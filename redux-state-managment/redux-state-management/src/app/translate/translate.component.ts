@@ -6,11 +6,12 @@ import { TranslateState } from './translate.type';
 @Component({
   selector: 'app-translate',
   templateUrl: './translate.component.html',
-  styleUrls: ['./translate.component.css']
+  styleUrls: ['./translate.component.css'],
 })
 export class TranslateComponent {
-message$: Observable<string>;
-constructor(private store: Store<TranslateState>) {
-  this.message$ = this.store.select('message');
-}
+  message$: Observable<string>;
+  
+  constructor(private store: Store<TranslateState>) {
+    this.message$ = this.store.select('message');
+  }
 }
