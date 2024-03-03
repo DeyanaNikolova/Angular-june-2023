@@ -14,7 +14,7 @@ post$: Observable<Post>;
 textMsg: string = '';  // form input value
 
   constructor(private store: Store<PostState>){
-    this.post$ = this.store.select('post');
+    this.post$ = this.store.select('post');  
   }
 
 
