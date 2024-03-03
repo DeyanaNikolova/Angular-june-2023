@@ -7,12 +7,14 @@ import { ReduxSimulationComponent } from './redux-simulation/redux-simulation.co
 import { TranslateComponent } from './translate/translate.component';
 import { StoreModule } from '@ngrx/store';
 import { translateReducer } from './translate/translate.reducer';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ReduxSimulationComponent,
-    TranslateComponent
+    TranslateComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
