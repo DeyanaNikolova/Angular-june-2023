@@ -15,8 +15,8 @@ export class PostComponent implements OnInit {
   posts: any = [];
 
   ngOnInit(): void {
-   // this.fetchPosts();
-   this.loadPosts();
+    // this.fetchPosts();
+     this.loadPosts();
   }
 
   // fetchPosts() {
@@ -28,19 +28,19 @@ export class PostComponent implements OnInit {
   //     });
   // }
 
-  // loadPosts(){
-  //   this.postSrvice.getPosts().subscribe((posts: any)=>{
+  //  loadPosts() {
+  //   this.postSrvice.getPosts().subscribe((posts: any) => {
   //     console.log(posts);
   //     this.posts = posts;
-  //   })
-  //}
-  loadPosts(){
-    this.postSrvice.getPosts().subscribe({
-      next: (posts: any)=>{
-        this.posts = posts;
-        console.log('Posts fetched successfully');
-      },
-      error: (error)=> console.log('Error fetching posts: ', error)
-    });
-}
+  //   });
+  // }
+    loadPosts(){
+      this.postSrvice.getPosts().subscribe({
+        next: (posts: any)=>{
+          this.posts = posts;
+          console.log('Posts fetched successfully');
+        },
+        error: (error)=> console.log('Error fetching posts: ', error)
+      });
+  }
 }

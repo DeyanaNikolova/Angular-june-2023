@@ -1,5 +1,4 @@
 <table>
-  @for(post of posts; track post.id){
   <thead>
     <tr>
       <th>ID</th>
@@ -8,13 +7,23 @@
     </tr>
   </thead>
   <tbody>
+    @for(post of posts; track post.id){
     <tr>
       <th>{{ post.id }}</th>
       <td>{{ post.title }}</td>
       <td>{{ post.body }}</td>
     </tr>
+    } @empty{
+    <h3>No Post</h3>
+    }
   </tbody>
-  } @empty{
-  <h3>No Post</h3>
-  }
 </table>
+
+<!-- @for(post of posts; track post.id){
+  <h3>{{post.id}}</h3>
+  <h3>{{post.title}}</h3>
+  <h3>{{post.body}}</h3>
+}
+  @empty{
+  <h3>No Posts</h3>
+} -->
