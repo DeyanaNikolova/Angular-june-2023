@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { DarkModeService } from './services/dark-mode.service';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +12,5 @@ import { NavbarComponent } from '../navbar/navbar.component';
 })
 export class AppComponent {
   title = 'angular17_bootstrap_darkmode';
+  darkModeService: DarkModeService = inject(DarkModeService);
 }
