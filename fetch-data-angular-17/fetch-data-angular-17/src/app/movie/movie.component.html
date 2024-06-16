@@ -1,1 +1,25 @@
-<p>movie works!</p>
+<div class="py-12">
+  <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div
+      class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg"
+    >
+      <div class="p-6 text-gray-900 dark:text-gray-100">
+        <div class="flex flex-wrap -mx-4">
+          @for(movie of movies; track movie.id){
+          <div
+            class="w-full sm:w-1/2 md:w-1/4 lg:w-1/4 xl:w-1/4 px-4 mb-8 dart:text-gray-200"
+          >
+            <div class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md">
+              <img
+                [src]="getFullImageUrl(movie.poster_path)" class="mb-4 rounded-md"
+                alt="Image"
+              />
+              <h2 class="text-xl font-bold mb-2">{{ movie.original_title }}</h2>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
