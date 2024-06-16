@@ -1,1 +1,16 @@
-<p>content works!</p>
+<div class="container">
+  <div class="row reow-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mt-4">
+    @for(card of cards; track $index){
+    <div class="col">
+      <div class="card shadow-sm border-info-subtle mb-4">
+        <img [src]="card.imageUrl" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{ card.title }}</h5>
+          <p class="card-text">{{ card.text }}</p>
+          <a href="#" class="btn btn-primary">Learn more</a>
+        </div>
+      </div>
+    </div>
+}
+  </div>
+</div>
