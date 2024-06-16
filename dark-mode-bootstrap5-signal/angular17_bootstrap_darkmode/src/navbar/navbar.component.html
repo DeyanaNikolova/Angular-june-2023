@@ -45,7 +45,7 @@
       </ul>
       <div>
         @if(darkModeService.darkModeSignal() === 'dark'){
-        <span (click)="toggleDarkMode()">
+        <span (click)="toggleDarkMode()" class="theme-toggle">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -63,7 +63,7 @@
           </svg>
         </span>
         }@else{
-        <span (click)="toggleDarkMode()">
+        <span (click)="toggleDarkMode()" class="theme-toggle">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
