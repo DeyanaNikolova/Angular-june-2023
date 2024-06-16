@@ -4,7 +4,7 @@ import { Injectable, signal } from '@angular/core';
   providedIn: 'root'
 })
 export class DarkModeService {
-darkModeSignal = signal<string>('null')
+darkModeSignal = signal<string>('null');
   constructor() { }
   updateDarkMode(){
     this.darkModeSignal.update((value)=>(value === "dark" ? "null": "dark"));
