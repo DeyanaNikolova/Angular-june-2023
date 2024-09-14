@@ -3,11 +3,12 @@ import { Component } from '@angular/core';
 import { Products, Product } from '../../types';
 import { ProductComponent } from "../components/product/product.component";
 import { ProductsService } from '../services/products.service';
+import { PaginatorModule, Paginator } from 'primeng/paginator';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, ProductComponent],
+  imports: [ CommonModule, ProductComponent, PaginatorModule ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
@@ -15,19 +16,26 @@ export class HomeComponent {
   constructor(private productsService: ProductsService) {}
 
   products: Product[] = [];
-
+  totalRecords: number = 0;
+  rows: number = 5;
   
   onProductOutput(product: Product){
-    console.log(product, 'Output');  
+    // console.log(product, 'Output');  
+  }
+
+  onPageChange(event: any){
+    this.fetchProducts(event.page, event.rows); 
+  }
+
+  fetchProducts(page: number, perPage: number){
+    this.productsService.getProducts('http://localhost:3000/clothes', { page, perPage })
+    .subscribe((products: Products) => {
+      this.products = products.items;
+      // console.log(products.items);  
+    });
   }
 
   ngOnInit(): void {
-    this.productsService
-      .getProducts('http://localhost:3000/clothes', { page: 0, perPage: 5 })
-      .subscribe((products: Products) => {
-        this.products = products.items;
-        console.log(products.items);
-        
-      });
+    this.fetchProducts(0, this.rows);
   } 
 }
