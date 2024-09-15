@@ -37,10 +37,10 @@ export interface Products  {
 }
 
 export interface Product {
-  id: number;
+  id?: number;
   name: string;
   image: string;
-  price: number;
+  price: string;
   rating: number;
 }
 
