@@ -20,7 +20,7 @@ export class HomeComponent {
   rows: number = 5;
   
   onProductOutput(product: Product){
-    // console.log(product, 'Output');  
+     console.log(product, 'Output');  
   }
 
   onPageChange(event: any){
@@ -28,9 +28,11 @@ export class HomeComponent {
   }
 
   fetchProducts(page: number, perPage: number){
-    this.productsService.getProducts('http://localhost:3000/clothes', { page, perPage })
+    this.productsService
+    .getProducts('http://localhost:3000/clothes', { page, perPage })
     .subscribe((products: Products) => {
       this.products = products.items;
+      this.totalRecords = products.total;
       // console.log(products.items);  
     });
   }
