@@ -5,10 +5,19 @@ import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { ConfirmationService } from 'primeng/api';
+import { PricePipe } from '../../pipes/price.pipe';
+import { TruncateNamePipe } from '../../pipes/truncate-name.pipe';
 
 @Component({
   selector: 'app-product',
-  imports: [RatingModule, FormsModule, ButtonModule, ConfirmPopupModule],
+  imports: [
+    RatingModule, 
+    FormsModule, 
+    ButtonModule, 
+    ConfirmPopupModule,
+    PricePipe,
+    TruncateNamePipe,
+  ],
   standalone: true,
   providers: [ConfirmationService],
   templateUrl: './product.component.html',
@@ -40,6 +49,4 @@ export class ProductComponent {
   deleteProduct() {
     this.delete.emit(this.product);
   }
-
-  ngOnInit() {}
 }
