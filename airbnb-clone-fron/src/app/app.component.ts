@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
   faIconsLibrary: FaIconLibrary = inject(FaIconLibrary);
   isListingView: boolean = true;
   toastService: ToastService = inject(ToastService);
-  messageService = inject(MessageService);
+  messageService: MessageService = inject(MessageService);
 
   ngOnInit(): void {
     this.initFontAwesome();

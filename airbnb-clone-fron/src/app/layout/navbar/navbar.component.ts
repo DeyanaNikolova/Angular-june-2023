@@ -31,7 +31,7 @@ export class NavbarComponent implements OnInit {
   guests: string = 'Add guests';
   dates: string = 'Any week';
 
-  toastService = inject(ToastService);
+  toastService: ToastService = inject(ToastService);
   //  login()=> this.authService.login();
 
   //  logout()=> this.authService.logout();
